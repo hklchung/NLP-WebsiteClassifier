@@ -19,7 +19,7 @@ topics = ["automotive", "travel", "science", "technology",
           "nature", "sports", "business", "beauty", "fashion", "music", "art",
           "movie", "entertainment", "media", "children", "health", "gambling", 
           "religion", "education", "politics", "history", "war", "news",
-          "food", "literature"]
+          "food", "literature", "crime"]
 
 # Function for removing irrelevant parts of the extracted text
 def remove_trash(text):

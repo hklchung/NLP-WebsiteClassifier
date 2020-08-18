@@ -49,7 +49,9 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About the Project
-In this project we use various Natural Language Processing (NLP) techniques to extract web content from a user provided URL and classify the web content based on a list of known topics. For simplicity, We will be using boilerpy3 to help us extract only the relevant text data from a given URL, apply transfer learning with Spacy's english language model for word similarity comparison and finally nltk for lammetization.
+In this project we built a function that leverages various Natural Language Processing (NLP) techniques to extract web content from a user provided URL and classify the web content based on a list of known topics. For simplicity, We will be using boilerpy3 to help us extract only the relevant text data from a given URL, apply transfer learning with Spacy's english language model for word similarity comparison and finally nltk for lammetization.
+
+The idea is to leverage the function built here to support other work such as feature generation for modelling work and insight analytics. 
 
 <!-- GETTING STARTED -->
 

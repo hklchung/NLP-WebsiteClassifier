@@ -82,8 +82,9 @@ git clone https://github.com/hklchung/NLP-WebsiteClassifier.git
 
 ## Usage
 1. First run everything inside main.py --this will help you load all the required packages and load the functions needed
-2. Update the list of topics if needed
-3. Run this in console: classify_web(url, topics = topics)
+2. Run this in console: nltk.download('popular')
+3. Update the list of topics if needed
+4. Run this in console: classify_web(url, topics = topics)
   
 <!-- CONTRIBUTING -->
 

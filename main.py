@@ -5,6 +5,8 @@ from nltk.corpus import wordnet as wn
 import pandas as pd
 pd.set_option("max_columns", None)
 import numpy as np
+from textblob import TextBlob
+from textblob.sentiments import NaiveBayesAnalyzer
 
 # Use Spacy package model
 nlp = spacy.load("en_core_web_md")
@@ -56,8 +58,11 @@ def to_token(text):
         token_list = [wn.morphy(x) if wn.morphy(x) != None else x for x in token_list]
     return token_list
 
+def sentiment(text):
+    return TextBlob(text).sentiment
+
 # Function that takes url and topics (long string of single word topics separated by space) and return topic relevancy scores
-def classify_web(url, topics = topics):
+def classify_web(url, topics = topics, analyse_sentiment = False):
     # Extract content from web url
     content = extractor.get_content_from_url(url)
     
@@ -76,8 +81,13 @@ def classify_web(url, topics = topics):
     for token in topic:
         topic_similarity.append(nlp(token_join).similarity(token))
     
+    # Calculate polarity (measure of positivity) and subjectivity
+    senti_result = None
+    if analyse_sentiment == True:
+        senti_result = sentiment(content)
+    
     # Table to capture results
     data = {'topics':topics.split(), 'similarity':topic_similarity}
     result = pd.DataFrame(data=data).sort_values(['similarity'], ascending=[False]).reset_index(drop=True)
     
-    return(result)
+    return(result, senti_result)

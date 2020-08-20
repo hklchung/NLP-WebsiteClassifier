@@ -12,10 +12,6 @@ from textblob.sentiments import NaiveBayesAnalyzer
 nlp = spacy.load("en_core_web_md")
 parser = English()
 
-# Use boilerpy3 ArticleExtractor()
-extractor = extractors.ArticleExtractor()
-content = extractor.get_content_from_url('https://www.nytimes.com/2020/08/16/us/migrant-children-hotels-coronavirus.html')
-
 # Topic are the topics of interest - user should first decide which topics to be included for analysis
 topics = ["automotive", "travel", "science", "technology",
           "nature", "sports", "business", "beauty", "fashion", "music", "art",
@@ -62,7 +58,10 @@ def sentiment(text):
     return TextBlob(text).sentiment
 
 # Function that takes url and topics (long string of single word topics separated by space) and return topic relevancy scores
-def classify_web(url, topics = topics, analyse_sentiment = False):
+def classify_web(url, topics = topics, analyse_sentiment = False):    
+    # Use boilerpy3 ArticleExtractor()
+    extractor = extractors.ArticleExtractor()
+    
     # Extract content from web url
     content = extractor.get_content_from_url(url)
     

@@ -7,6 +7,7 @@
 ![spacy 2.3.2](https://img.shields.io/badge/spacy-2.3.2-green.svg?style=plastic)
 ![nltk 3.4.5](https://img.shields.io/badge/nltk-3.4.5-green.svg?style=plastic)
 ![boilerpy3 1.0.2](https://img.shields.io/badge/boilerpy3-1.0.2-green.svg?style=plastic)
+![textblob 0.15.3](https://img.shields.io/badge/textblob-0.15.3-green.svg?style=plastic)
 ![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=plastic)
 
 <br />
@@ -64,6 +65,7 @@ To get started, please follow the below guidelines on prerequisites and installa
 * Spacy==2.3.2
 * NLTK==3.4.5
 * Boilerpy3==1.0.2
+* TextBlob==0.15.3
 * Pandas==1.0.3
 * Numpy==1.18.2
 
@@ -85,6 +87,8 @@ git clone https://github.com/hklchung/NLP-WebsiteClassifier.git
 2. Run this in console: nltk.download('popular')
 3. Update the list of topics if needed
 4. Run this in console: classify_web(url, topics = topics)
+
+Sentiment analysis capability has also been added to support users to understand the sentiment in web pages. You can retrieve sentiment analysis results by changing the analyse_sentiment argument to True in the function. 
   
 <!-- CONTRIBUTING -->
 

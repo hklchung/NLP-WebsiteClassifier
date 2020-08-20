@@ -84,9 +84,13 @@ git clone https://github.com/hklchung/NLP-WebsiteClassifier.git
 
 ## Usage
 1. First run everything inside main.py --this will help you load all the required packages and load the functions needed
-2. Run this in console: nltk.download('popular')
-3. Update the list of topics if needed
-4. Run this in console: classify_web(url, topics = topics)
+2. If you never had Spacy before, you may have to download the Spacy English language model first by running the below in Git Bash or Terminal:
+```sh
+python -m spacy download en_core_web_md
+```
+3. Run this in console: nltk.download('popular')
+4. Update the list of topics if needed
+5. Run this in console: classify_web(url, topics = topics)
 
 Sentiment analysis capability has also been added to support users to understand the sentiment in web pages. You can retrieve sentiment analysis results by changing the analyse_sentiment argument to True in the function. 
   

@@ -156,7 +156,11 @@ class webcon:
         extractor = extractors.ArticleExtractor()
         
         # Extract content from web url
-        content = extractor.get_content_from_url(url)
+        try:
+            content = extractor.get_content_from_url(url)
+        except AttributeError:
+            print("======================================================")
+            print("There were issues retrieving content from this site...")
         
         # Join the tokens back up for Spacy nlp function
         token_join = ' '.join(self.to_token(self.remove_trash(content, min_size)))

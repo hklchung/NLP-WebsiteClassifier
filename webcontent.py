@@ -44,7 +44,7 @@ topics = ["automotive", "travel", "science", "technology",
           "food", "literature", "crime"]
 
 # Function for removing irrelevant parts of the extracted text
-def remove_trash(text):
+def remove_trash(text, min_size=4):
     """
     
     Your input is a string. The string will be parsed by the character
@@ -62,7 +62,7 @@ def remove_trash(text):
     """
     cleaned = ''
     for i in text.split('\n'):
-        if len(i.split()) <= 4:
+        if len(i.split()) <= min_size:
             continue
         else:
             cleaned += (i)
